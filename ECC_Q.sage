@@ -1,5 +1,3 @@
-from random import random
-rand = lambda n: int(n*random())
 P = Primes()
 
 while 1:
@@ -11,16 +9,16 @@ while 1:
 
 	p = random_prime(2^(p_bits+1)-1, False, 2^p_bits)
 
-	a = rand(p)
-	b = rand(p)
+	a = randint(1,p)
+	b = randint(1,p)
 	E = EllipticCurve(Zmod(p),[a,b])
 	while E.cardinality() not in P:
-		a = rand(p)
-		b = rand(p)
+		a = randint(1,p)
+		b = randint(1,p)
 		E = EllipticCurve(Zmod(p),[a,b])
 
 	G = E.random_element()
-	m = rand(p)
+	m = randint(1,p)
 	Q = m * G
 
 	print int(log(p,2))
