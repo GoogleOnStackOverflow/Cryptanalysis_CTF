@@ -1,7 +1,3 @@
-from random import random
-rand = lambda n: int(n*random())
-P = Primes()
-
 while 1:
 	try:
 		one_bits = int(raw_input("Bits of N = "))/2
@@ -9,14 +5,14 @@ while 1:
 		print("Not a number, exit.")
 		break
 
-	rand_in_bits = 2^one_bits + rand(2^(one_bits-1))
-	first_p = P.next( rand_in_bits )
-	rand_in_bits = 2^one_bits + rand(2^(one_bits-1))
-	sec_p = P.next( rand_in_bits )
+	P = random_prime(2^(one_bits+1)-1, False, 2^one_bits)
+	Q = 2
+	while int(log(P*Q, 2)) != 160:
+		Q = random_prime(2^(one_bits+1)-1, False, 2^one_bits)
 	
 	print "P = "
-	print first_p
+	print P
 	print "Q = " 
-	print sec_p
+	print Q
 	print "N = P x Q =" 
-	print first_p*sec_p
+	print P*Q

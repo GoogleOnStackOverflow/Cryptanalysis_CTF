@@ -9,8 +9,7 @@ while 1:
 		print("Not a number, exit.")
 		break
 
-	rand_in_bits = 2^p_bits + rand(2^(p_bits-1))
-	p = P.next( rand_in_bits )
+	p = random_prime(2^(p_bits+1)-1, False, 2^p_bits)
 
 	a = rand(p)
 	b = rand(p)
