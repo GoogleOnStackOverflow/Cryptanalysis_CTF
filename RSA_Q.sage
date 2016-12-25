@@ -7,7 +7,7 @@ while 1:
 
 	P = random_prime(2^(one_bits+1)-1, False, 2^one_bits)
 	Q = 2
-	while int(log(P*Q, 2)) != 160:
+	while int(log(P*Q, 2)) != one_bits*2:
 		Q = random_prime(2^(one_bits+1)-1, False, 2^one_bits)
 	
 	print "P = "
