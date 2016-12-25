@@ -8,9 +8,9 @@ while 1:
 	except ValueError:
 		print("Not a number, exit.")
 		break
-	p = 2
-	while p < 2^p_bits or p > 2^(p_bits+1):
-		p = P.next( 2^(p_bits-rand(p_bits/10)) * rand(2^(p_bits/10)) )
+
+	rand_in_bits = 2^p_bits + rand(2^(p_bits-1))
+	p = P.next( rand_in_bits )
 
 	a = rand(p)
 	b = rand(p)
@@ -24,6 +24,7 @@ while 1:
 	m = rand(p)
 	Q = m * G
 
+	print int(log(p,2))
 	print E.abelian_group()
 	print "Point G = "
 	print G
