@@ -12,6 +12,7 @@ while 1:
 	a = randint(1,p)
 	b = randint(1,p)
 	E = EllipticCurve(Zmod(p),[a,b])
+
 	while E.cardinality() not in P:
 		a = randint(1,p)
 		b = randint(1,p)
@@ -22,7 +23,7 @@ while 1:
 	Q = m * G
 
 	print int(log(p,2))
-	print E.abelian_group()
+	#print E.abelian_group()
 	print "Point G = "
 	print G
 	print "Point Q = "
